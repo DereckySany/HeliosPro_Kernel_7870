@@ -13,9 +13,9 @@ mkdir -p "$TOOLCHAIN_DIR"
 curl -L "$TOOLCHAIN_URL" -o "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz"
 
 # Extrair toolchain
-tar -xvf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
+tar -xf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
 
 # Adicionar diretório bin ao PATH
 export PATH="$TOOLCHAIN_DIR/bin:$PATH"
-
+ls $TOOLCHAIN_DIR
 echo "Toolchain arm64 instalado com sucesso!"
