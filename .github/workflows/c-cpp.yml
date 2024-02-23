@@ -1,0 +1,41 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential linux-headers-$(uname -r) libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm git
+    - name: Download and Install Toolchain
+      run: |
+        ./download-toolchain.sh
+  
+    - name: Upload tarball Linux
+      uses: actions/upload-artifact@v3
+      with:
+       name: kernel-tarball
+       path: linux-*.tar.gz
+       if-no-files-found: warn  # Optional
+   
+    - name: Upload package Linux
+      uses: actions/upload-artifact@v3
+      with:
+       name: linux-kernel-package-multiarch
+       path: linux-*.deb
+       if-no-files-found: warn  # Optional
+    
