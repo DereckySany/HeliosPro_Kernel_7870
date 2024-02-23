@@ -2,7 +2,7 @@
 
 # URL do toolchain arm64
 #TOOLCHAIN_URL="https://snapshots.linaro.org/gnu-toolchain/14.0-2023.06-1/aarch64-linux-gnu/gcc-linaro-14.0.0-2023.06-x86_64_aarch64-linux-gnu.tar.xz"
-TOOLCHAIN_URL="https://releases.linaro.org/components/toolchain/gcc-linaro/4.9-2017.01/gcc-linaro-4.9-2017.01.tar.xz"
+TOOLCHAIN_URL="https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/aarch64-linux-gnu/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz"
 # Diretório de destino
 TOOLCHAIN_DIR="$HOME/toolchains/arm64"
 
@@ -19,6 +19,6 @@ tar -xf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
 export PATH="$TOOLCHAIN_DIR/bin:$PATH"
 
 echo "!ist of Toolchain!"
-ls -r $TOOLCHAIN_DIR/gcc-linaro-4.9-2017.01/
+ls -r $TOOLCHAIN_DIR/
 echo "Toolchain arm64 instalado com sucesso!"
 echo "$PATH"
