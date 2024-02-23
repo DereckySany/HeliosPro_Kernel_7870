@@ -19,7 +19,8 @@
 # Main Dir
 CR_DIR=$(pwd)
 # Define toolchan path
-CR_TC=~/Android/Toolchains/linaro-7.4.1-aarch64-linux/bin/aarch64-linux-gnu-
+#CR_TC=~/Android/Toolchains/linaro-7.4.1-aarch64-linux/bin/aarch64-linux-gnu-
+CR_TC=$home/toolchains/arm64/bin/aarch64-linux-gnu-
 # Define proper arch and dir for dts files
 CR_DTS=arch/arm64/boot/dts
 CR_DTS_TREBLE=arch/arm64/boot/exynos7870_Treble.dtsi
@@ -382,7 +383,7 @@ menuvar="SM-J710X"
 #PS3='Please select your option (1-9): '
 #menuvar=("SM-J530X" "SM-J730X" "SM-J710X" "SM-J701X" "SM-G610X" "SM-J600X" "SM-A600X" "Build_All" "Exit")
 #select menuvar in "${menuvar[@]}"
-do
+#do
     case $menuvar in
         "SM-J530X")
             clear
@@ -588,4 +589,4 @@ do
             ;;
         *) echo Invalid option.;;
     esac
-done
+#done
