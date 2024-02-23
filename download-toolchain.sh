@@ -13,7 +13,7 @@ mkdir -p "$TOOLCHAIN_DIR"
 curl -L "$TOOLCHAIN_URL" -o "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz"
 
 # Extrair toolchain
-tar -xzf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
+tar -xvf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
 
 # Adicionar diretório bin ao PATH
 export PATH="$TOOLCHAIN_DIR/bin:$PATH"
