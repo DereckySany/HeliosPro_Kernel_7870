@@ -23,6 +23,7 @@ jobs:
         sudo apt-get install -y build-essential linux-headers-$(uname -r) libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm git
     - name: Download and Install Toolchain
       run: |
+        chmod +x download-toolchain.sh
         ./download-toolchain.sh
   
     - name: Upload tarball Linux
