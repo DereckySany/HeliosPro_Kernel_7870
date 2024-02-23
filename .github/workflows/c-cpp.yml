@@ -21,11 +21,16 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential linux-headers-$(uname -r) libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm git
+
     - name: Download and Install Toolchain
       run: |
         chmod +x download-toolchain.sh
         ./download-toolchain.sh
-  
+    - name: Start compilation
+      run: |
+        chmod +x Cronos_no_interaction.sh
+        ./Cronos_no_interaction.sh
+        
     - name: Upload tarball Linux
       uses: actions/upload-artifact@v3
       with:
