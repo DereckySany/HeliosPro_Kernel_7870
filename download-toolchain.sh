@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL do toolchain arm64
-TOOLCHAIN_URL="https://developer.arm.com/tools-and-software/open-source-software/gnu-toolchain/aarch64-linux-gnu-binaries/latest"
+TOOLCHAIN_URL="https://snapshots.linaro.org/gnu-toolchain/14.0-2023.06-1/aarch64-linux-gnu/gcc-linaro-14.0.0-2023.06-x86_64_aarch64-linux-gnu.tar.xz"
 
 # Diretório de destino
 TOOLCHAIN_DIR="$HOME/toolchains/arm64"
