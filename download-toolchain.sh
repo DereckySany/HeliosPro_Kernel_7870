@@ -17,7 +17,8 @@ tar -xf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
 
 # Adicionar diretório bin ao PATH
 export PATH="$TOOLCHAIN_DIR/bin:$PATH"
+
 echo "!ist of Toolchain!"
-ls $TOOLCHAIN_DIR/bin
+ls -r $TOOLCHAIN_DIR/bin
 echo "Toolchain arm64 instalado com sucesso!"
 echo "$PATH"
