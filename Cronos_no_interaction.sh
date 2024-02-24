@@ -16,7 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ls
-echo "$PATH"
+chmod +x download-toolchain.sh
+./download-toolchain.sh
 # Main Dir
 CR_DIR=$(pwd)
 # Define toolchan path
