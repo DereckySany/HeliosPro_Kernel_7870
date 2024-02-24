@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Checkout source code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install dependencies
       run: |
@@ -28,14 +28,14 @@ jobs:
         ./Cronos_no_interaction.sh
         
     - name: Upload Image Generated
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
        name: kernel-image
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
     - name: Upload Zip Generated
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
        name: kernel-Zip
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*-*.img
