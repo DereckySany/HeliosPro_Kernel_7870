@@ -22,7 +22,7 @@ chmod +x download-toolchain.sh
 CR_DIR=$(pwd)
 # Define toolchan path
 #CR_TC=~/Android/Toolchains/linaro-7.4.1-aarch64-linux/bin/aarch64-linux-gnu-
-CR_TC=$home/toolchains/arm64/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+CR_TC=/home/runner/toolchains/arm64/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 # Define proper arch and dir for dts files
 CR_DTS=arch/arm64/boot/dts
 CR_DTS_TREBLE=arch/arm64/boot/exynos7870_Treble.dtsi
