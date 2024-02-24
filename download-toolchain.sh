@@ -19,6 +19,6 @@ tar -xf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
 export PATH="$TOOLCHAIN_DIR/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin:$PATH"
 
 echo "!ist of Toolchain!"
-ls -r $TOOLCHAIN_DIR/
+ls -r $TOOLCHAIN_DIR/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin
 echo "Toolchain arm64 instalado com sucesso!"
 echo "$PATH"
