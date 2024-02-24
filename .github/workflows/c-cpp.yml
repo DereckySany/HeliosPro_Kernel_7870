@@ -27,17 +27,17 @@ jobs:
         chmod +x Cronos_no_interaction.sh
         ./Cronos_no_interaction.sh
         
-    - name: Upload tarball Linux
+    - name: Upload Image Generated
       uses: actions/upload-artifact@v3
       with:
-       name: kernel-tarball
-       path: linux-*.tar.gz
+       name: kernel-image
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
-    - name: Upload package Linux
+    - name: Upload Zip Generated
       uses: actions/upload-artifact@v3
       with:
-       name: linux-kernel-package-multiarch
-       path: linux-*.deb
+       name: kernel-Zip
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*-*.img
        if-no-files-found: warn  # Optional
     
