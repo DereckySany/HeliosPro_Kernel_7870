@@ -16,7 +16,7 @@ curl -L "$TOOLCHAIN_URL" -o "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz"
 tar -xf "$TOOLCHAIN_DIR/arm64-linux-gnu-binaries.tar.xz" -C "$TOOLCHAIN_DIR"
 
 # Adicionar diretório bin ao PATH
-export PATH="$TOOLCHAIN_DIR/bin:$PATH"
+export PATH="$TOOLCHAIN_DIR/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin:$PATH"
 
 echo "!ist of Toolchain!"
 ls -r $TOOLCHAIN_DIR/
