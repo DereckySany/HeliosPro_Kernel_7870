@@ -453,10 +453,11 @@ menuvar="SM-J710X"
             CR_DTSFILES=$CR_DTSFILES_J710X
             if [ $CR_MODE = "2" ]; then
               echo " Building Treble variant "
-              CR_CONFIG_USB=$CR_CONFIG_TREBLE
+              #CR_CONFIG_USB=$CR_CONFIG_TREBLE
+	      CR_CONFIG_USB=$CR_CONFIG_ONEUI
               CR_VARIANT=$CR_VARIANT_J710X-TREBLE
-              CR_RAMDISK=$CR_RAMDISK_PORT
               CR_DTB_MOUNT=$CR_DTS_TREBLE
+              CR_RAMDISK=$CR_RAMDISK_PORT
             else
               echo " Building OneUI variant "
               CR_CONFIG_USB=$CR_CONFIG_ONEUI
@@ -483,8 +484,8 @@ menuvar="SM-J710X"
               echo " Building Treble variant "
               CR_CONFIG_USB=$CR_CONFIG_TREBLE
               CR_VARIANT=$CR_VARIANT_J701X-TREBLE
-              CR_RAMDISK=$CR_RAMDISK_PORT
               CR_DTB_MOUNT=$CR_DTS_TREBLE
+              CR_RAMDISK=$CR_RAMDISK_PORT
             else
               echo " Building OneUI variant "
               CR_CONFIG_USB=$CR_CONFIG_ONEUI
