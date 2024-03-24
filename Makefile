@@ -414,7 +414,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 
 KBUILD_AFLAGS_KERNEL :=
 # KBUILD_CFLAGS_KERNEL := -mtune=cortex-a53 -mcpu=cortex-a53 -funsafe-math-optimizations
-KBUILD_CFLAGS_KERNEL := -mcpu=cortex-a53 -funsafe-math-optimizations -funroll-loops
+KBUILD_CFLAGS_KERNEL := -mcpu=cortex-a53 -mtune=cortex-a53 -funsafe-math-optimizations -funroll-loops
 KBUILD_AFLAGS   := -D__ASSEMBLY__
 KBUILD_AFLAGS_MODULE  := -DMODULE
 KBUILD_CFLAGS_MODULE  := -DMODULE
