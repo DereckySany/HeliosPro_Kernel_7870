@@ -1,12 +1,24 @@
-name: C/C++ CI
+name: Kernel Compiler CI
 
 on:
   push:
     branches:
     - main
+    - Cronos
+    - default
+    - OSRC
+    - Pie
+    - Treble-9.0
+    - master
   pull_request:
     branches:
     - main
+    - Cronos
+    - default
+    - OSRC
+    - Pie
+    - Treble-9.0
+    - master
   workflow_dispatch:
 
 jobs:
