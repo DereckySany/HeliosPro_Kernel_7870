@@ -1,28 +1,12 @@
-name: Kernel Compiler CI
+name: Kernel Help Compiler CI
 
 on:
-  push:
-    branches:
-    - main
-    - Cronos
-    - default
-    - OSRC
-    - Pie
-    - Treble-9.0
-    - master
-  pull_request:
-    branches:
-    - main
-    - Cronos
-    - default
-    - OSRC
-    - Pie
-    - Treble-9.0
-    - master
   workflow_dispatch:
       inputs:
         MODEL_TYPE:
+          description: 'DEVICE CODENAME'
           default: SM-J710X
+          type: choice
           options:
             - "SM-J530X" 
             - "SM-J730X" 
@@ -31,8 +15,30 @@ on:
             - "SM-G610X" 
             - "SM-J600X" 
             - "SM-A600X"
+          required: true
+        VARIANT_TYPE:
+          description: 'BUID VARIANT'
+          default: Treble
           type: choice
-          description: 'DEVICE_NAME'
+          options:
+            - "Treble" 
+            - "oneUI"
+          required: true
+        VARIANT_VERSION:
+          description: 'KERNEL VERSION'
+          default: V5.0
+          type: choice
+          options:
+            - "V6.0" 
+            - "V5.0" 
+            - "V4.0"
+            - "V3.0"
+            - "V2.0" 
+            - "V1.0"
+          required: true
+        VARIANT_NAME:
+          description: 'KERNEL NAME'
+          default: CronosKernel
           required: true
 jobs:
   build:
@@ -49,7 +55,7 @@ jobs:
     - name: Start compilation
       run: |
         chmod +x Cronos_no_interaction.sh
-        ./Cronos_no_interaction.sh ${{ github.event.inputs.MODEL_TYPE }}
+        ./Cronos_no_interaction.sh ${{ github.event.inputs.MODEL_TYPE }} ${{ github.event.inputs.VARIANT_TYPE }} ${{ github.event.inputs.VARIANT_VERSION }} ${{ github.event.inputs.VARIANT_NAME }}
         
     - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Image Generated
       uses: actions/upload-artifact@v4

@@ -42,8 +42,10 @@ CR_KERNEL=$CR_DIR/arch/arm64/boot/Image
 # Compiled dtb by dtbtool
 CR_DTB=$CR_DIR/boot.img-dtb
 # Kernel Name and Version
-CR_VERSION=V5.0
-CR_NAME=CronosKernel
+# CR_VERSION=V5.0
+CR_VERSION=$3
+# CR_NAME=CronosKernel
+CR_NAME=$4
 # Thread count
 CR_JOBS=$(nproc --all)
 # Target android version and platform (7/n/8/o/9/p)
@@ -123,7 +125,7 @@ fi
 
 # Treble / OneUI
 #read -p "Variant? (1 (oneUI) | 2 (Treble) > " aud
-echo "Variant? (1 (oneUI) | 2 (Treble) > " && aud=2
+echo "Variant? (1 (oneUI) | 2 (Treble) > " && aud=$2
 if [ "$aud" = "Treble" -o "$aud" = "2" ]; then
      echo "Build Treble Variant"
      CR_MODE="2"
