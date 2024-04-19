@@ -24,7 +24,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        menuvar: [ "SM-J530X", "SM-J730X", "SM-J710X", "SM-J701X", "SM-G610X", "SM-J600X", "SM-A600X" ]
     steps:
     - name: Checkout source code
       uses: actions/checkout@v4
@@ -37,7 +39,7 @@ jobs:
     - name: Start compilation
       run: |
         chmod +x Cronos_no_interaction.sh
-        ./Cronos_no_interaction.sh
+        ./Cronos_no_interaction.sh ${{ matrix.menuvar }}
         
     - name: Upload Image Generated
       uses: actions/upload-artifact@v4
