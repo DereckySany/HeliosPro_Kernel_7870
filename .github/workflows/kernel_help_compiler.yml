@@ -1,0 +1,67 @@
+name: Kernel Compiler CI
+
+on:
+  push:
+    branches:
+    - main
+    - Cronos
+    - default
+    - OSRC
+    - Pie
+    - Treble-9.0
+    - master
+  pull_request:
+    branches:
+    - main
+    - Cronos
+    - default
+    - OSRC
+    - Pie
+    - Treble-9.0
+    - master
+  workflow_dispatch:
+      inputs:
+        MODEL_TYPE:
+          default: SM-J710X
+          options:
+            - "SM-J530X" 
+            - "SM-J730X" 
+            - "SM-J710X" 
+            - "SM-J701X" 
+            - "SM-G610X" 
+            - "SM-J600X" 
+            - "SM-A600X"
+          type: choice
+          description: 'DEVICE_NAME'
+          required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential linux-headers-$(uname -r) libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm git ccache
+
+    - name: Start compilation
+      run: |
+        chmod +x Cronos_no_interaction.sh
+        ./Cronos_no_interaction.sh ${{ github.event.inputs.MODEL_TYPE }}
+        
+    - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Image Generated
+      uses: actions/upload-artifact@v4
+      with:
+       name: kernel-image-${{ github.event.inputs.MODEL_TYPE }}
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
+       if-no-files-found: warn  # Optional
+   
+    - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Zip Generated
+      uses: actions/upload-artifact@v4
+      with:
+       name: kernel-${{ github.event.inputs.MODEL_TYPE }}-Zip
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*-*.img
+       if-no-files-found: warn  # Optional
+    

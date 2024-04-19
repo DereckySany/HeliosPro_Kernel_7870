@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        menuvar: [ "SM-J730X", "SM-J710X" ]
+        menuvar: [ "SM-J530X", "SM-J730X", "SM-J710X", "SM-J701X", "SM-G610X", "SM-J600X", "SM-A600X" ]
     steps:
     - name: Checkout source code
       uses: actions/checkout@v4
@@ -41,14 +41,14 @@ jobs:
         chmod +x Cronos_no_interaction.sh
         ./Cronos_no_interaction.sh ${{ matrix.menuvar }}
         
-    - name: Upload Image Generated
+    - name: Upload ${{ matrix.menuvar }} Image Generated
       uses: actions/upload-artifact@v4
       with:
        name: kernel-image-${{ matrix.menuvar }}
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
-    - name: Upload Zip Generated
+    - name: Upload ${{ matrix.menuvar }} Zip Generated
       uses: actions/upload-artifact@v4
       with:
        name: kernel-${{ matrix.menuvar }}-Zip
