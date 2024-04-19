@@ -27,7 +27,6 @@ jobs:
     strategy:
       matrix:
         menuvar: [ "SM-J730X", "SM-J710X" ]
-        menuvar2: [ SM-J730X, SM-J710X ]
     steps:
     - name: Checkout source code
       uses: actions/checkout@v4
@@ -45,14 +44,14 @@ jobs:
     - name: Upload Image Generated
       uses: actions/upload-artifact@v4
       with:
-       name: kernel-image-${{ matrix.menuvar2 }}
+       name: kernel-image-${{ matrix.menuvar }}
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
     - name: Upload Zip Generated
       uses: actions/upload-artifact@v4
       with:
-       name: kernel-${{ matrix.menuvar2 }}-Zip
+       name: kernel-${{ matrix.menuvar }}-Zip
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*-*.img
        if-no-files-found: warn  # Optional
     
