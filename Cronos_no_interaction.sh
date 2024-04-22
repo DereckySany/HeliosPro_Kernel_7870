@@ -51,6 +51,16 @@ CR_JOBS=$(nproc --all)
 # Target android version and platform (7/n/8/o/9/p)
 CR_ANDROID=p
 CR_PLATFORM=9.0.0
+if [[ $5 == 7 ]]; then
+  CR_ANDROID=n
+  CR_PLATFORM=7.0.0
+elif [[ $5 == 8 ]]; then
+  CR_ANDROID=o
+  CR_PLATFORM=8.0.0
+elif [[ $5 == 9 ]]; then
+  CR_ANDROID=p
+  CR_PLATFORM=9.0.0
+else
 # Target ARCH
 CR_ARCH=arm64
 # Current Date

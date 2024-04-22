@@ -40,6 +40,16 @@ on:
           description: 'KERNEL NAME'
           default: CronosKernel
           required: true
+
+        VARIANT_MODEM:
+          description: 'ANDROID MODEM VERSION'
+          default: '7'
+          type: choice
+          options:
+            - 7
+            - 8
+            - 9
+          required: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -65,7 +75,7 @@ jobs:
     - name: Start compilation
       run: |
         chmod +x Cronos_no_interaction.sh
-        ./Cronos_no_interaction.sh ${{ github.event.inputs.MODEL_TYPE }} ${{ github.event.inputs.VARIANT_TYPE }} ${{ github.event.inputs.VARIANT_VERSION }} ${{ github.event.inputs.VARIANT_NAME }}
+        ./Cronos_no_interaction.sh ${{ github.event.inputs.MODEL_TYPE }} ${{ github.event.inputs.VARIANT_TYPE }} ${{ github.event.inputs.VARIANT_VERSION }} ${{ github.event.inputs.VARIANT_NAME }} ${{ github.event.inputs.VARIANT_MODEM}}
         
     - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Image Generated
       uses: actions/upload-artifact@v4
