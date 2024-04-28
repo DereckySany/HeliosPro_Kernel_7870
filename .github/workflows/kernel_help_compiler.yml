@@ -81,13 +81,13 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
        name: kernel-image-${{ github.event.inputs.MODEL_TYPE }}
-       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/${{ github.event.inputs.VARIANT_NAME }}-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
     - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Zip Generated
       uses: actions/upload-artifact@v4
       with:
        name: kernel-${{ github.event.inputs.MODEL_TYPE }}-Zip
-       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*-*.img
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/${{ github.event.inputs.VARIANT_NAME }}-V*-*-*-*.img
        if-no-files-found: warn  # Optional
     
