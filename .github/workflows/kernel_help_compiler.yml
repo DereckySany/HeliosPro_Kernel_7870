@@ -46,9 +46,9 @@ on:
           default: '7'
           type: choice
           options:
-            - 7
-            - 8
-            - 9
+            - '7'
+            - '8'
+            - '9'
           required: true
 jobs:
   build:
