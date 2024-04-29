@@ -93,7 +93,7 @@ jobs:
     - name: Upload ${{ github.event.inputs.VARIANT_NAME }}-${{ github.event.inputs.VARIANT_VERSION }}-${{ github.event.inputs.MODEL_TYPE }}-${{ github.event.inputs.VARIANT_TYPE }} Image Generated
       uses: actions/upload-artifact@v4
       with:
-       name: ${{ github.event.inputs.VARIANT_NAME }}-image-${{ github.event.inputs.MODEL_TYPE }}
+       name: ${{ github.event.inputs.VARIANT_NAME }}-image-${{ github.event.inputs.VARIANT_VERSION }}-${{ github.event.inputs.MODEL_TYPE }}-${{ github.event.inputs.VARIANT_TYPE }}
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/${{ github.event.inputs.VARIANT_NAME }}-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
