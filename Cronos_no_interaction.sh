@@ -15,9 +15,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-ls
-chmod +x download-toolchain.sh
-./download-toolchain.sh
+#ls
+chmod +x download-toolchain.sh && ./download-toolchain.sh
 # Main Dir
 CR_DIR=$(pwd)
 # Define toolchan path
@@ -393,7 +392,7 @@ clear
 echo "----------------------------------------------"
 echo "$CR_NAME $CR_VERSION Build Script"
 echo "----------------------------------------------"
-menuvar="$1"
+menuvar=$1
 # menuvar="SM-J710X"
 #PS3='Please select your option (1-9): '
 #menuvar=("SM-J530X" "SM-J730X" "SM-J710X" "SM-J701X" "SM-G610X" "SM-J600X" "SM-A600X" "Build_All" "Exit")
@@ -603,8 +602,6 @@ menuvar="$1"
         "Exit")
             break
             ;;
-        *) echo Invalid option.
-            break
-            ;;
+        *) echo Invalid option.;;
     esac
 #done
