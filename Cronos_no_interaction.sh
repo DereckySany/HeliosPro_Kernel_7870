@@ -55,9 +55,9 @@ if [ $5 == 7 ]; then
   CR_ANDROID=n
 elif [ $5 == 8 ]; then
   CR_ANDROID=o
-elif [ $5 == 9 ]; then
+else [ $5 == 9 ]; then
   CR_ANDROID=p
-else
+fi
 # Target ARCH
 CR_ARCH=arm64
 # Current Date
