@@ -3,9 +3,19 @@ name: Kernel Help Compiler CI
 on:
   workflow_dispatch:
       inputs:
+        RUN_OS_VERSON:
+          required: true
+          description: "MACHINE ON RUN CODE"
+          type: choice
+          options:
+            - ubuntu-latest
+            - ubuntu-22.04
+            - ubuntu-20.04
+          default: ubuntu-latest
+
         MODEL_TYPE:
+          required: true
           description: 'DEVICE CODENAME'
-          default: SM-J710X
           type: choice
           options:
             - "SM-J530X" 
@@ -15,18 +25,20 @@ on:
             - "SM-G610X" 
             - "SM-J600X" 
             - "SM-A600X"
-          required: true
+          default: SM-J710X
+
         VARIANT_TYPE:
+          required: true
           description: 'BUID VARIANT'
-          default: Treble
           type: choice
           options:
             - "Treble" 
             - "oneUI"
-          required: true
+          default: Treble
+
         VARIANT_VERSION:
+          required: true
           description: 'KERNEL VERSION'
-          default: V5.0
           type: choice
           options:
             - "V6.0" 
@@ -35,24 +47,25 @@ on:
             - "V3.0"
             - "V2.0" 
             - "V1.0"
-          required: true
+          default: V5.0
+
         VARIANT_NAME:
+          required: true
           description: 'KERNEL NAME'
           default: CronosKernel
-          required: true
 
         VARIANT_MODEM:
+          required: true
           description: 'ANDROID MODEM VERSION'
-          default: '7'
           type: choice
           options:
-            - '7'
-            - '8'
-            - '9'
-          required: true
+            - 7
+            - 8
+            - 9
+          default: '7'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.inputs.RUN_OS_VERSON }}
     steps:
     - name: Checkout source code
       uses: actions/checkout@v4
@@ -81,7 +94,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
        name: kernel-image-${{ github.event.inputs.MODEL_TYPE }}
-       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/CronosKernel-V*-*-*.zip
+       path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/${{ github.event.inputs.VARIANT_NAME }}-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
     - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Zip Generated
