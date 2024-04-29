@@ -393,7 +393,7 @@ clear
 echo "----------------------------------------------"
 echo "$CR_NAME $CR_VERSION Build Script"
 echo "----------------------------------------------"
-menuvar=$1
+menuvar="$1"
 # menuvar="SM-J710X"
 #PS3='Please select your option (1-9): '
 #menuvar=("SM-J530X" "SM-J730X" "SM-J710X" "SM-J701X" "SM-G610X" "SM-J600X" "SM-A600X" "Build_All" "Exit")
