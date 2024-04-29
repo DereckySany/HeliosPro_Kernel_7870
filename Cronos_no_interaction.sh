@@ -50,10 +50,10 @@ CR_JOBS=$(nproc --all)
 # Target android version and platform (7/n/8/o/9/p)
 # CR_ANDROID=p
 # CR_PLATFORM=9.0.0
-CR_PLATFORM=$5.0.0
-if [ $5 == 7 ]; then
+CR_PLATFORM="$5.0.0"
+if [ "$5" == 7 ]; then
   CR_ANDROID=n
-elif [ $5 == 8 ]; then
+elif [ "$5" == 8 ]; then
   CR_ANDROID=o
 else
   CR_ANDROID=p
