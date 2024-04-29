@@ -603,6 +603,8 @@ menuvar="$1"
         "Exit")
             break
             ;;
-        *) echo Invalid option.;;
+        *) echo Invalid option.
+            break
+            ;;
     esac
 #done
