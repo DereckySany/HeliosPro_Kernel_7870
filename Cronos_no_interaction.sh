@@ -15,7 +15,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-ls
+# ls
 chmod a+x download-toolchain.sh && ./download-toolchain.sh
 # Main Dir
 CR_DIR=$(pwd)
@@ -51,11 +51,11 @@ CR_JOBS=$(nproc --all)
 # CR_ANDROID=p
 # CR_PLATFORM=9.0.0
 CR_PLATFORM=$5.0.0
-if [[ $5 == 7 ]]; then
+if [ $5 == 7 ]; then
   CR_ANDROID=n
-elif [[ $5 == 8 ]]; then
+elif [ $5 == 8 ]; then
   CR_ANDROID=o
-elif [[ $5 == 9 ]]; then
+elif [ $5 == 9 ]; then
   CR_ANDROID=p
 else
 # Target ARCH
