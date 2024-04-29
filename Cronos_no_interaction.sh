@@ -48,15 +48,24 @@ CR_NAME=$4
 # Thread count
 CR_JOBS=$(nproc --all)
 # Target android version and platform (7/n/8/o/9/p)
-# CR_ANDROID=p
-# CR_PLATFORM=9.0.0
 CR_PLATFORM="$5.0.0"
-if [ "$5" == 7 ]; then
-  CR_ANDROID=n
-elif [ "$5" == 8 ]; then
-  CR_ANDROID=o
+if [[ $1 == "SM-J710X" ]]; then
+  CR_PLATFORM_J710X="$5.0.0"
+  if [ "$5" == 7 ]; then
+    CR_ANDROID_J710X=n
+  elif [ "$5" == 8 ]; then
+    CR_ANDROID_J710X=o
+  else
+    CR_ANDROID_J710X=p
+  fi
 else
-  CR_ANDROID=p
+  if [ "$5" == 7 ]; then
+    CR_ANDROID=n
+  elif [ "$5" == 8 ]; then
+    CR_ANDROID=o
+  else
+    CR_ANDROID=p
+  fi
 fi
 # Target ARCH
 CR_ARCH=arm64
@@ -69,8 +78,8 @@ export ANDROID_MAJOR_VERSION=$CR_ANDROID
 export PLATFORM_VERSION=$CR_PLATFORM
 export $CR_ARCH
 # J710X Specific
-CR_ANDROID_J710X=n
-CR_PLATFORM_J710X=7.0.0
+# CR_ANDROID_J710X=n
+# CR_PLATFORM_J710X=7.0.0
 ##########################################
 # Device specific Variables [SM-J530_2GB (F/G/S/L/K)]
 CR_DTSFILES_J530X="exynos7870-j5y17lte_eur_open_00.dtb exynos7870-j5y17lte_eur_open_01.dtb exynos7870-j5y17lte_eur_open_02.dtb exynos7870-j5y17lte_eur_open_03.dtb exynos7870-j5y17lte_eur_open_05.dtb exynos7870-j5y17lte_eur_open_07.dtb"

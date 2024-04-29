@@ -90,17 +90,17 @@ jobs:
         chmod +x Cronos_no_interaction.sh
         ./Cronos_no_interaction.sh ${{ github.event.inputs.MODEL_TYPE }} ${{ github.event.inputs.VARIANT_TYPE }} ${{ github.event.inputs.VARIANT_VERSION }} ${{ github.event.inputs.VARIANT_NAME }} ${{ github.event.inputs.VARIANT_MODEM }}
 
-    - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Image Generated
+    - name: Upload ${{ github.event.inputs.VARIANT_NAME }}-${{ github.event.inputs.VARIANT_VERSION }}-${{ github.event.inputs.MODEL_TYPE }}-${{ github.event.inputs.VARIANT_TYPE }} Image Generated
       uses: actions/upload-artifact@v4
       with:
-       name: kernel-image-${{ github.event.inputs.MODEL_TYPE }}
+       name: ${{ github.event.inputs.VARIANT_NAME }}-image-${{ github.event.inputs.MODEL_TYPE }}
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/${{ github.event.inputs.VARIANT_NAME }}-V*-*-*.zip
        if-no-files-found: warn  # Optional
    
-    - name: Upload ${{ github.event.inputs.MODEL_TYPE }} Zip Generated
+    - name: Upload ${{ github.event.inputs.VARIANT_NAME }}-${{ github.event.inputs.VARIANT_VERSION }}-${{ github.event.inputs.MODEL_TYPE }}-${{ github.event.inputs.VARIANT_TYPE }} Zip Generated
       uses: actions/upload-artifact@v4
       with:
-       name: kernel-${{ github.event.inputs.MODEL_TYPE }}-Zip
+       name: ${{ github.event.inputs.VARIANT_NAME }}-${{ github.event.inputs.VARIANT_VERSION }}-${{ github.event.inputs.MODEL_TYPE }}-${{ github.event.inputs.VARIANT_TYPE }}-Zip
        path: /home/runner/work/HeliosPro_Kernel_7870/HeliosPro_Kernel_7870/Cronos/Product/${{ github.event.inputs.VARIANT_NAME }}-V*-*-*-*.img
        if-no-files-found: warn  # Optional
     
