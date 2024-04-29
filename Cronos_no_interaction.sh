@@ -48,8 +48,16 @@ CR_NAME=$4
 # Thread count
 CR_JOBS=$(nproc --all)
 # Target android version and platform (7/n/8/o/9/p)
-CR_ANDROID=p
-CR_PLATFORM=9.0.0
+# CR_ANDROID=p
+# CR_PLATFORM=9.0.0
+CR_PLATFORM=$5.0.0
+if [[ $5 == 7 ]]; then
+  CR_ANDROID=n
+elif [[ $5 == 8 ]]; then
+  CR_ANDROID=o
+elif [[ $5 == 9 ]]; then
+  CR_ANDROID=p
+else
 # Target ARCH
 CR_ARCH=arm64
 # Current Date
