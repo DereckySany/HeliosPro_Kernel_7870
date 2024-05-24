@@ -3,6 +3,10 @@ name: Kernel Help Compiler CI
 on:
   workflow_dispatch:
       inputs:
+        name:
+           description: "Release-Build"
+           default: "Generate release build"
+           
         RUN_OS_VERSON:
           required: true
           description: "MACHINE ON RUN CODE"
