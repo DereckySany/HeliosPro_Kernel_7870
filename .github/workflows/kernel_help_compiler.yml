@@ -1,9 +1,9 @@
-name: Kernel Help Compiler CI
+name: Kernel Custom Compiler CI
 
 on:
   workflow_dispatch:
       inputs:
-        name:
+        _name:
            description: "Release-Build"
            default: "Generate release build"
            
@@ -68,7 +68,7 @@ on:
             - 9
           default: '7'
 jobs:
-  build:
+  ${{ github.event.inputs._name }}:
     runs-on: ${{ github.event.inputs.RUN_OS_VERSON }}
     steps:
     - name: Checkout source code
