@@ -1,9 +1,9 @@
-name: Kernel Custom Compiler CI
+name: CUSTOM Kernel Ajust Compiler CI
 
 on:
   workflow_dispatch:
       inputs:
-        _name:
+        name:
            description: "Release-Build"
            default: "Generate release build"
            
@@ -68,7 +68,7 @@ on:
             - 9
           default: '7'
 jobs:
-  ${{ github.event.inputs._name }}:
+  compiler_kernel_build:
     runs-on: ${{ github.event.inputs.RUN_OS_VERSON }}
     steps:
     - name: Checkout source code
