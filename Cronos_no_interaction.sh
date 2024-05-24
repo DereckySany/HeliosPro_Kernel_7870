@@ -472,8 +472,8 @@ menuvar=$1
             CR_DTSFILES=$CR_DTSFILES_J710X
             if [ $CR_MODE = "2" ]; then
               echo " Building Treble variant "
-              #CR_CONFIG_USB=$CR_CONFIG_TREBLE
-	      CR_CONFIG_USB=$CR_CONFIG_ONEUI
+              CR_CONFIG_USB=$CR_CONFIG_TREBLE
+	      #CR_CONFIG_USB=$CR_CONFIG_ONEUI
               CR_VARIANT=$CR_VARIANT_J710X-TREBLE
               CR_DTB_MOUNT=$CR_DTS_TREBLE
               CR_RAMDISK=$CR_RAMDISK_PORT
