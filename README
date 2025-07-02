@@ -1,73 +1,104 @@
-HeliosPro_Kernel_7870
-🚀 Visão Geral
+Vou ajudar a reescrever o README.md usando as marcações do Markdown corretamente. Aqui está o formato adequado:
+
+# HeliosPro_Kernel_7870
+
+## 🚀 Visão Geral
 Este projeto é um kernel personalizado desenvolvido para o dispositivo Samsung Galaxy J5 Prime (modelo SM-G570M). O kernel HeliosPro_Kernel_7870 foi construído a partir da base do código-fonte do kernel stock da Samsung para o Android 7.0 Nougat, especificamente para a arquitetura Exynos 7870.
+
 O objetivo principal deste kernel é oferecer melhorias de desempenho, otimização de bateria e novos recursos para usuários que desejam ir além do kernel original de fábrica.
-✨ Recursos
- * Base no Kernel Stock (Android 7.0 - Nougat): Garante compatibilidade e estabilidade, mantendo a base oficial da Samsung.
- * Otimizações para Exynos 7870: Ajustes específicos para o SoC Exynos 7870, visando melhor performance e eficiência energética.
- * Melhorias de Desempenho: Diversos tweaks e otimizações para proporcionar uma experiência mais fluida no dispositivo.
- * Otimização de Bateria: Foco em reduzir o consumo de energia para prolongar a vida útil da bateria.
- * Novos Recursos (a serem detalhados): Este é um kernel em desenvolvimento, e recursos adicionais serão implementados e listados aqui à medida que forem adicionados.
-🛠️ Requisitos
+
+## ✨ Recursos
+* Base no Kernel Stock (Android 7.0 - Nougat): Garante compatibilidade e estabilidade, mantendo a base oficial da Samsung.
+* Otimizações para Exynos 7870: Ajustes específicos para o SoC Exynos 7870, visando melhor performance e eficiência energética.
+* Melhorias de Desempenho: Diversos tweaks e otimizações para proporcionar uma experiência mais fluida no dispositivo.
+* Otimização de Bateria: Foco em reduzir o consumo de energia para prolongar a vida útil da bateria.
+* Novos Recursos (a serem detalhados): Este é um kernel em desenvolvimento, e recursos adicionais serão implementados e listados aqui à medida que forem adicionados.
+
+## 🛠️ Requisitos
 Para compilar e/ou instalar este kernel, você precisará de:
- * Um Samsung Galaxy J5 Prime (SM-G570M): Este kernel é exclusivo para este modelo.
- * TWRP (Team Win Recovery Project): Necessário para flashar o kernel customizado no dispositivo.
- * Ferramentas de Compilação (se for compilar):
-   * Um ambiente Linux (Ubuntu, Debian, etc.)
-   * git
-   * make
-   * gcc ou clang (toolchain ARM compatível com a arquitetura Exynos)
-   * Java Development Kit (JDK)
-   * python
-⚙️ Como Compilar (Para Desenvolvedores)
- * Clone o Repositório:
-   git clone https://github.com/DereckySany/HeliosPro_Kernel_7870.git
+
+* Um Samsung Galaxy J5 Prime (SM-G570M): Este kernel é exclusivo para este modelo.
+* TWRP (Team Win Recovery Project): Necessário para flashar o kernel customizado no dispositivo.
+* Ferramentas de Compilação (se for compilar):
+  * Um ambiente Linux (Ubuntu, Debian, etc.)
+  * git
+  * make
+  * gcc ou clang (toolchain ARM compatível com a arquitetura Exynos)
+  * Java Development Kit (JDK)
+  * python
+
+## ⚙️ Como Compilar (Para Desenvolvedores)
+
+### Clone o Repositório:
+```bash
+git clone https://github.com/DereckySany/HeliosPro_Kernel_7870.git
 cd HeliosPro_Kernel_7870
+```
 
- * Use o Script cronos.sh (Recomendado):
-   Este projeto inclui o script cronos.sh para facilitar o processo de compilação. Ele automatiza a configuração do toolchain e a execução dos comandos de compilação.
-   chmod +x cronos.sh
+### Use o Script cronos.sh (Recomendado):
+Este projeto inclui o script cronos.sh para facilitar o processo de compilação. Ele automatiza a configuração do toolchain e a execução dos comandos de compilação.
+
+```bash
+chmod +x cronos.sh
 ./cronos.sh
+```
 
-   O script irá guiá-lo pelas etapas necessárias para compilar o kernel.
- * Compilação Manual (Alternativa):
-   Se preferir compilar manualmente:
-   * Certifique-se de ter um toolchain ARM compatível configurado em seu sistema. Você pode baixar um pré-compilado ou compilar o seu próprio.
-   * Compile o Kernel:
-     make clean
+O script irá guiá-lo pelas etapas necessárias para compilar o kernel.
+
+### Compilação Manual (Alternativa):
+Se preferir compilar manualmente:
+
+1. Certifique-se de ter um toolchain ARM compatível configurado em seu sistema. Você pode baixar um pré-compilado ou compilar o seu próprio.
+2. Compile o Kernel:
+```bash
+make clean
 make ARCH=arm64 CROSS_COMPILE=<caminho_para_seu_toolchain>/bin/arm-linux-gnueabihf- heliospro_defconfig
 make -j$(nproc --all) ARCH=arm64 CROSS_COMPILE=<caminho_para_seu_toolchain>/bin/arm-linux-gnueabihf-
+```
 
-     Substitua <caminho_para_seu_toolchain> pelo diretório onde seu toolchain está localizado.
- * Localize o Kernel Compilado:
-   O arquivo Image ou zImage (o kernel compilado) e o dtb (Device Tree Blob) serão gerados no diretório de saída, geralmente em arch/arm64/boot/.
-📦 Como Instalar (Para Usuários)
- * Baixe a Última Versão:
-   As versões pré-compiladas (se disponíveis) serão encontradas na seção Releases do repositório ou como um arquivo ZIP flasheável.
- * Transfira para o Dispositivo:
-   Copie o arquivo .zip do kernel para o armazenamento interno ou externo do seu Galaxy J5 Prime.
- * Reinicie no TWRP:
-   Desligue o aparelho e ligue-o pressionando as teclas Volume Up + Home + Power simultaneamente até ver o logo do TWRP.
- * Faça um Backup (Recomendado!):
-   No TWRP, vá em "Backup" e selecione "Boot", "System" e "Data" para criar um backup completo do seu sistema atual.
- * Instale o Kernel:
-   * No menu principal do TWRP, toque em "Install".
-   * Navegue até o local onde você salvou o arquivo .zip do kernel.
-   * Selecione o arquivo e deslize para confirmar o flash.
- * Reinicie o Sistema:
-   Após a instalação bem-sucedida, toque em "Reboot System".
-🤝 Contribuições
+> Substitua `<caminho_para_seu_toolchain>` pelo diretório onde seu toolchain está localizado.
+
+### Localize o Kernel Compilado:
+O arquivo Image ou zImage (o kernel compilado) e o dtb (Device Tree Blob) serão gerados no diretório de saída, geralmente em `arch/arm64/boot/`.
+
+## 📦 Como Instalar (Para Usuários)
+
+1. **Baixe a Última Versão:**
+   * As versões pré-compiladas (se disponíveis) serão encontradas na seção Releases do repositório ou como um arquivo ZIP flasheável.
+
+2. **Transfira para o Dispositivo:**
+   * Copie o arquivo .zip do kernel para o armazenamento interno ou externo do seu Galaxy J5 Prime.
+
+3. **Reinicie no TWRP:**
+   * Desligue o aparelho e ligue-o pressionando as teclas Volume Up + Home + Power simultaneamente até ver o logo do TWRP.
+
+4. **Faça um Backup (Recomendado!):**
+   * No TWRP, vá em "Backup" e selecione "Boot", "System" e "Data" para criar um backup completo do seu sistema atual.
+
+5. **Instale o Kernel:**
+   * No menu principal do TWRP, toque em "Install"
+   * Navegue até o local onde você salvou o arquivo .zip do kernel
+   * Selecione o arquivo e deslize para confirmar o flash
+
+6. **Reinicie o Sistema:**
+   * Após a instalação bem-sucedida, toque em "Reboot System"
+
+## 🤝 Contribuições
 Contribuições são muito bem-vindas! Se você deseja contribuir, por favor:
- * Faça um fork do repositório.
- * Crie uma nova branch para suas alterações (git checkout -b feature/sua-feature).
- * Faça suas alterações e commit-as (git commit -am 'Adicionei uma nova feature').
- * Faça push para a branch (git push origin feature/sua-feature).
- * Abra um Pull Request.
-⚠️ Aviso Legal
+
+1. Faça um fork do repositório
+2. Crie uma nova branch para suas alterações (`git checkout -b feature/sua-feature`)
+3. Faça suas alterações e commit-as (`git commit -am 'Adicionei uma nova feature'`)
+4. Faça push para a branch (`git push origin feature/sua-feature`)
+5. Abra um Pull Request
+
+## ⚠️ Aviso Legal
 A modificação do software do seu dispositivo pode anular a garantia e, em casos raros, causar danos ao aparelho. Este projeto é fornecido "no estado em que se encontra", sem garantias de qualquer tipo. Ao utilizar este kernel, você assume total responsabilidade por quaisquer problemas que possam surgir.
-📜 Licença
+
+## 📜 Licença
 Este projeto é licenciado sob a licença GPLv2.
-✉️ Contato
+
+## ✉️ Contato
 Para dúvidas ou sugestões, você pode abrir uma Issue neste repositório.
 
 
