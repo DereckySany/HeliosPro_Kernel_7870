@@ -2,7 +2,9 @@
 # Baixa e extrai o toolchain arm64 (aria2c, com fallback para curl)
 
 #TOOLCHAIN_URL="https://snapshots.linaro.org/gnu-toolchain/14.0-2023.06-1/aarch64-linux-gnu/gcc-linaro-14.0.0-2023.06-x86_64_aarch64-linux-gnu.tar.xz"
-TOOLCHAIN_URL="https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/aarch64-linux-gnu/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz"
+# "https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/aarch64-linux-gnu/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz"
+# "https://mirrors.cstcloud.cn/armbian-releases/_toolchain/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu.tar.xz"
+TOOLCHAIN_URL="https://mirrors.cstcloud.cn/armbian-releases/_toolchain/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz"
 TOOLCHAIN_DIR="$HOME/toolchains/arm64"
 
 # Nomes derivados da URL (basta trocar a URL acima)
