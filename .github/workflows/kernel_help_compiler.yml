@@ -13,8 +13,24 @@ on:
           type: choice
           options:
             - ubuntu-latest
+            - ubuntu-26.04
+            - ubuntu-26.04-arm64
+            - ubuntu-24.04
+            - ubuntu-24.04-arm64
             - ubuntu-22.04
-            - ubuntu-20.04
+            - ubuntu-22.04-arm64
+            - ubuntu-slim
+            - xcode-27
+            - macOS-26
+            - macOS-26-arm64
+            - macOS-15
+            - macOS-15-arm64
+            - macOS-14
+            - windows-latest
+            - windows-2025-vs2026
+            - windows-2022
+            - windows-11-vs2026-arm
+            - windows-11-vs2026-arm64
           default: ubuntu-latest
 
         MODEL_TYPE:
